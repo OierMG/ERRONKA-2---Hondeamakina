@@ -1,0 +1,55 @@
+
+int botoia1= 2;
+int botoia2= 3;
+int botoia3= 4;
+
+int relay1= 13;
+int relay2= 14;
+int relay3= 15;
+
+int balioa1= 0;
+int balioa2= 0;
+int balioa3= 0;
+
+// Sarrera-Irteeren Inizializazioa
+
+void setup() 
+  {
+ Serial.begin (9600);
+ pinMode (botoia1, INPUT);
+ pinMode (relay1, OUTPUT);
+
+ Serial.begin (9600);
+ pinMode (botoia2, INPUT);
+ pinMode (relay2, OUTPUT);
+
+ Serial.begin (9600);
+ pinMode (botoia3, INPUT);
+ pinMode (relay3, OUTPUT);
+  }
+
+// Programa nagusia
+
+void loop() 
+  {
+ balioa1 = digitalRead(botoia1); //Pultsadorea irakurri
+ Serial.print ("1 Pultsagailuaren balioa=  ");
+ Serial.println (balioa1);
+ if(balioa1==0){digitalWrite(relay1,LOW);}
+ else {digitalWrite(relay1,HIGH);}
+ delay (150); 
+
+ balioa2 = digitalRead(botoia2); //Pultsadorea irakurri
+ Serial.print ("2 Pultsagailuaren balioa=  ");
+ Serial.println (balioa2);
+ if(balioa2==0){digitalWrite(relay2,LOW);}
+ else {digitalWrite(relay2,HIGH);}
+ delay (150);
+
+ balioa3 = digitalRead(botoia3); //Pultsadorea irakurri
+ Serial.print ("3 Pultsagailuaren balioa=  ");
+ Serial.println (balioa3);
+ if(balioa3==0){digitalWrite(relay3,LOW);}
+ else {digitalWrite(relay3,HIGH);}
+ delay (150);
+}
